@@ -22,8 +22,7 @@ const Update = () => {
         setValue('abonated', bonsaiData.abonated);
         setValue('trasplanted', bonsaiData.trasplanted);
         setValue('notes', bonsaiData.notes);
-        setValue('images', bonsaiData.images);
-        console.log('Hola desde la peticion fetch', bonsaiData)
+        setUrl_Imagen(bonsaiData.images);
       } catch (error) {
         console.error('Error al obtener el bonsái:', error);
       }
@@ -67,8 +66,8 @@ const Update = () => {
       <form className='container-form-update' onSubmit={handleSubmit(onSubmit)}> 
 
 
-        <div className='form-update-left' >  
-          <label htmlFor="images" ><p>Cambia la imagen de tu Bonsai</p><img  src="https://res.cloudinary.com/dvko0roau/image/upload/v1708026581/add_frame_tbf87i.png" alt="imagen de un marco de fotos" /></label>
+        <div className='form-update-left'>  
+          <label htmlFor="images"><p>Cambia la imagen de tu Bonsai</p><img  src="https://res.cloudinary.com/dvko0roau/image/upload/v1708026581/add_frame_tbf87i.png" alt="imagen de un marco de fotos" /></label>
           <input id="images" type="file" style={{ color: "transparent", opacity: 0, position: "absolute" }}   onChange={changeUploadImage}/>
             <br /> 
           {Url_Imagen && (
